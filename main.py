@@ -10,8 +10,33 @@ class sender_message(BaseModel):
     message : str
 app = FastAPI()
 
-with open("howUsersIhave.txt" , 'r') as f :
-    numbers_of_id = int(f.read())
+
+
+
+try :
+    with open("howUsersIhave.txt" , 'r') as f :
+        numbers_of_id = int(f.read())
+except :
+    with open("howUsersIhave.txt" , 'w') as f :
+        f.write("0")
+try :
+    with open("all_users_id.txt" , "r") as f :
+        f.read()
+except :
+    with open("all_users_id.txt" , "w") as f :
+        f.write()
+try :
+    with open("all_users_name.txt" , "r") as f :
+        f.read()
+except :
+    with open("all_users_name.txt" , "w") as f :
+        f.write()
+try :
+    with open("all_users_password.txt" , "r") as f :
+        f.read()
+except : 
+    with open("all_users_password.txt" , "w") as f :
+        f.write()
 
 
 @app.post('/')
