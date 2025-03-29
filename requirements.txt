@@ -1,1 +1,2 @@
-fatstapi
+fastapi
+uvicorn
